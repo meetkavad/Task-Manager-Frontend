@@ -28,7 +28,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const getTasks = async () => {
       try {
-        const response = await fetch("http://localhost:8080/tasks/", {
+        const response = await fetch("https://task-manager-backend-4zd9.onrender.com/tasks/", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

@@ -57,12 +57,15 @@ export const TaskList: React.FC<props> = ({
 
   const handleDelete = async (taskId: string) => {
     try {
-      const response = await fetch(`http://localhost:8080/tasks/${taskId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://task-manager-backend-4zd9.onrender.com/tasks/${taskId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
     } catch (error) {
       console.error(error);
     }
@@ -92,7 +95,7 @@ export const TaskList: React.FC<props> = ({
     const updateTaskInBackend = async (task: Task) => {
       try {
         const response = await fetch(
-          `http://localhost:8080/tasks/${task._id}`,
+          `https://task-manager-backend-4zd9.onrender.com/${task._id}`,
           {
             method: "PATCH",
             headers: {
